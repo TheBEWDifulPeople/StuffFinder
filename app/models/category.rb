@@ -1,6 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :tags
-  has_many :classifieds, through: :tags
+  has_many :classifieds
 
   def recent_classifieds
     classifieds.limit(5)
