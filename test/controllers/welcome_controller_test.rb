@@ -6,4 +6,10 @@ class WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "gets redirected if they're logged in" do
+    sign_in users(:john)
+    get :index
+    assert_redirected_to classifieds_path
+  end
+
 end
