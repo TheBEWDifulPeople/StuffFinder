@@ -1,7 +1,8 @@
-<h1><%= @category.name %></h1>
-<h2>Listings under this category</h2>
-<ul>
-  <% @category.classifieds.each do |classified| %>
-    <li><%= link_to "#{truncate(classified.title)} - #{classified.price}", classified %></li>
-  <% end %>
-</ul>
+<h1>Listings under <%= @category.name %></h1>
+<section class="well">
+  <ul class="unstyled">
+    <% @category.classifieds.each do |classified| %>
+      <li><%= link_to "#{truncate(classified.title)} - #{number_to_currency classified.price}", classified %></li>
+    <% end %>
+  </ul>
+</section>
