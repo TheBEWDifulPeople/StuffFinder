@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ClassifiedsControllerTest < ActionController::TestCase
   test "creating a classified" do
+    sign_in users(:john)
     params = {
       category: "space", 
       classified: {
