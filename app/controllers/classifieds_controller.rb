@@ -1,7 +1,13 @@
 class ClassifiedsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+
+  def index
+    @categories = Category.order(:name)
+  end
+
   def new
     @classified = Classified.new
+    @categories = Category.pluck(:name)
   end
 
   def create
