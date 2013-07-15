@@ -32,16 +32,6 @@ ActiveRecord::Schema.define(version: 20130714010858) do
   add_index "classifieds", ["category_id"], name: "index_classifieds_on_category_id"
   add_index "classifieds", ["user_id"], name: "index_classifieds_on_user_id"
 
-  create_table "tags", force: true do |t|
-    t.integer  "category_id"
-    t.integer  "classified_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tags", ["category_id"], name: "index_tags_on_category_id"
-  add_index "tags", ["classified_id"], name: "index_tags_on_classified_id"
-
   create_table "users", force: true do |t|
     t.string   "email",               default: "", null: false
     t.string   "encrypted_password",  default: "", null: false
