@@ -1,6 +1,6 @@
 <h1><%= @classified.title %> - <%= number_to_currency @classified.price %></h1>
 <section class="well well-small">
-  <p>Contact this seller <%= mail_to current_user.email, "here", subject: "StuffFinder - #{@classified.title}" %></p>
+  <p>Contact this seller <%= mail_to @classified.user.email, "here", subject: "StuffFinder - #{@classified.title}" %></p>
   <div>
     <p class="lead"><%= @classified.description %></p>
   </div>
